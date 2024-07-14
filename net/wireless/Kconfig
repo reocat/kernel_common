@@ -18,8 +18,9 @@ config WEXT_PRIV
 	bool
 
 config CFG80211
-	tristate "cfg80211 - wireless configuration API"
-	depends on RFKILL || !RFKILL
+	# tristate "cfg80211 - wireless configuration API"
+	default m
+        depends on RFKILL || !RFKILL
 	select FW_LOADER
 	select CRC32
 	# may need to update this when certificates are changed and are
