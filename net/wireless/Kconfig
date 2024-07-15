@@ -18,24 +18,24 @@ config WEXT_PRIV
 	bool
 
 config CFG80211
-	# tristate "cfg80211 - wireless configuration API"
-	default m
+        tristate "cfg80211 - wireless configuration API"
+        default m
         depends on RFKILL || !RFKILL
-	select FW_LOADER
-	select CRC32
-	# may need to update this when certificates are changed and are
-	# using a different algorithm, though right now they shouldn't
-	# (this is here rather than below to allow it to be a module)
-	select CRYPTO_SHA256 if CFG80211_USE_KERNEL_REGDB_KEYS
-	help
-	  cfg80211 is the Linux wireless LAN (802.11) configuration API.
-	  Enable this if you have a wireless device.
+        select FW_LOADER
+        select CRC32
+        # may need to update this when certificates are changed and are
+        # using a different algorithm, though right now they shouldn't
+        # (this is here rather than below to allow it to be a module)
+        select CRYPTO_SHA256 if CFG80211_USE_KERNEL_REGDB_KEYS
+        help
+          cfg80211 is the Linux wireless LAN (802.11) configuration API.
+          Enable this if you have a wireless device.
 
-	  For more information refer to documentation on the wireless wiki:
+          For more information refer to documentation on the wireless wiki:
 
-	  https://wireless.wiki.kernel.org/en/developers/Documentation/cfg80211
+          https://wireless.wiki.kernel.org/en/developers/Documentation/cfg80211
 
-	  When built as a module it will be called cfg80211.
+          When built as a module it will be called cfg80211.
 
 if CFG80211
 
