@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0-only
 config MAC80211
-	# tristate "Generic IEEE 802.11 Networking Stack (mac80211)"
+	tristate "Generic IEEE 802.11 Networking Stack (mac80211)"
 	default m
         depends on CFG80211
 	select CRYPTO
